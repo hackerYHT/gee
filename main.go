@@ -42,10 +42,10 @@ func main() {
 	stu1 := &student{Name: "Geektutu", Age: 20}
 	stu2 := &student{Name: "Jack", Age: 22}
 	r.GET("/", func(c *gee.Context) {
-		c.HTML(http.StatusOK, "css.tmpl", nil)
+		c.HTML(http.StatusOK, "css.html", nil)
 	})
 	r.GET("/students", func(c *gee.Context) {
-		c.HTML(http.StatusOK, "arr.tmpl", gee.H{
+		c.HTML(http.StatusOK, "arr.html", gee.H{
 			"title":  "gee",
 			"stuArr": [2]*student{stu1, stu2},
 		})
