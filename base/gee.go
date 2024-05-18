@@ -27,6 +27,12 @@ type RouterGroup struct {
 	engine      *Engine       // all groups share a Engine instance
 }
 
+func Default() *Engine {
+	engine := New()
+	engine.Use(Logger(), Recovery())
+	return engine
+}
+
 // New is the constructor of gee.Engine
 func New() *Engine {
 	engine := &Engine{router: newRouter()}
